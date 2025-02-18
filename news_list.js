@@ -1,5 +1,10 @@
 export const news_list = [
     {
+        'timestamp': 'January 2025',
+        'event': 'Paper accepted at IUI 2025 - "A Design Space of Behavior Change Interventions for Responsible Data Science"',
+        'url': 'https://ameyabp.github.io/projects/bcds/A_Design_Space_of_Behavior_Change_Interventions_for_Responsible_Data_Science.pdf'
+    },
+    {
         'timestamp': 'October 2024',
         'event': 'Presented my work - "Interactive Visualization of Ensemble Data Assimilation Forecasts for Freshwater Floods" virtually at IEEE VIS 2024 Viz 4 Climate + Sustainability workshop, St.Pete Beach, Florida, USA',
         'url': 'https://visforclimateaction.github.io/papers/1033-doc.pdf'

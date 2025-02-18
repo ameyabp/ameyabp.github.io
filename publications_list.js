@@ -1,4 +1,16 @@
 export const publications_list = {
+    'bcds_design_space': {
+        'title': 'A Design Space of Behavior Change Interventions for Responsible Data Science',
+        'venue': 'Proceedings of the Conference on Intelligent User Interface (IUI), 2025',
+        'authors': 'Z. Dong, T. Barrett, A. Patil, Y. Shoda, L. Battle, E. Wall',
+        'doi': 'https://doi.org/10.1145/3708359.3712140',
+        'paper': 'https://ameyabp.github.io/projects/bcds/A_Design_Space_of_Behavior_Change_Interventions_for_Responsible_Data_Science.pdf',
+        'video': null,
+        'presentation': null,
+        'data': null,
+        'news': null,
+        'bibtex': null
+    },
     'bcds': {
         'title': "Behavior Matters: An Alternative Perspective on Promoting Responsible Data Science",
         'venue': "ACM Conference on Computer-Supported Cooperative Work and Social Computing, 2025",
@@ -10,7 +22,7 @@ export const publications_list = {
         'data': null,
         'news': null,
         'bibtex': '\n\
-            @misc{dong2024behaviormattersalternativeperspective,\n\
+            @misc{dong_behavior_2024,\n\
             title={Behavior Matters: An Alternative Perspective on Promoting Responsible Data Science},\n\
             author={Ziwei Dong and Ameya Patil and Yuichi Shoda and Leilani Battle and Emily Wall},\n\
             year={2024},\n\
