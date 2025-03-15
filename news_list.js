@@ -1,5 +1,9 @@
 export const news_list = [
     {
+        'timestamp': 'March 2025',
+        'event': 'Advanced to candidacy'
+    },
+    {
         'timestamp': 'January 2025',
         'event': 'Paper accepted at IUI 2025 - "A Design Space of Behavior Change Interventions for Responsible Data Science"',
         'url': 'https://ameyabp.github.io/projects/bcds/A_Design_Space_of_Behavior_Change_Interventions_for_Responsible_Data_Science.pdf'
