@@ -9,7 +9,24 @@ export const publications_list = {
         'presentation': null,
         'data': null,
         'news': null,
-        'bibtex': null
+        'bibtex': '\n\
+            @inproceedings{10.1145/3708359.3712140,\n\
+            author = {Dong, Ziwei and Barrett, Teanna and Patil, Ameya B and Shoda, Yuichi and Battle, Leilani and Wall, Emily},\n\
+            title = {A Design Space of Behavior Change Interventions for Responsible Data Science},\n\
+            year = {2025},\n\
+            isbn = {9798400713064},\n\
+            publisher = {Association for Computing Machinery},\n\
+            address = {New York, NY, USA},\n\
+            url = {https://doi.org/10.1145/3708359.3712140},\n\
+            doi = {10.1145/3708359.3712140},\n\
+            abstract = {Behavior change theories, rooted in psychology and sociology, offer valuable insights into why and how individuals and groups modify their actions and decisions. By leveraging these theories in the context of responsible data science, we can better understand and influence the behaviors of data scientists, who play a central role in ensuring ethical outcomes by collecting data, developing, and deploying models. In this paper, we present a comprehensive design space for behavior change interventions aimed at promoting responsible behaviors in data science, structured around the 5W1H interrogative framework (Why, Who, What, When, Where, and How). This framework provides a practical guide for developing effective interventions designed to promote responsible behaviors in data science. We showcase the usability of this design space by using it to characterize existing responsible data science intervention tools. We further demonstrate its utility through two usage scenarios to show how the design space can be applied during the ideation phase for building effective tools to foster responsible data science practices. Our work equips the data science community with resources to create effective interventions that not only ensure technical excellence but also foster ethical responsibility, ultimately benefiting society through the responsible use of data.},\n\
+            booktitle = {Proceedings of the 30th International Conference on Intelligent User Interfaces},\n\
+            pages = {37–53},\n\
+            numpages = {17},\n\
+            keywords = {Behavior Change Intervention, Data Science, HCI, Persuasive Technology},\n\
+            location = {},\n\
+            series = {IUI \'25}\n\
+        }'
     },
     'bcds': {
         'title': "Behavior Matters: An Alternative Perspective on Promoting Responsible Data Science",
