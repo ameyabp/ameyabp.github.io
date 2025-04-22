@@ -1,5 +1,9 @@
 export const news_list = [
     {
+        'timestamp': 'April 2025',
+        'event': 'Started research internship at the National Renewable Energy Laboratory (NREL), Golden, Colorado USA'
+    },
+    {
         'timestamp': 'March 2025',
         'event': 'Advanced to candidacy'
     },
@@ -58,7 +62,7 @@ export const news_list = [
     },
     {
         'timestamp': 'May 2023 to September 2023',
-        'event': 'Summer internship in the SIParCS program at the National Center for Atmospheric Research (NCAR)',
+        'event': 'Summer internship in the SIParCS program at the National Center for Atmospheric Research (NCAR), Boulder, Colorado USA',
         'url': 'https://www2.cisl.ucar.edu/outreach/internships/2023projects'
     },
     {
@@ -68,7 +72,7 @@ export const news_list = [
     },
     {
         'timestamp': 'October 2022',
-        'event': 'Presented my paper - "Studying Early Decision Making with Progressive Bar Charts" at IEEE VIS 2022 Oklahoma City, USA',
+        'event': 'Presented my paper - "Studying Early Decision Making with Progressive Bar Charts" at IEEE VIS 2022 Oklahoma City, Oklahoma USA',
         'url': 'https://www.youtube.com/watch?v=L523gBLIM5c&t=10260s'
     },
     {
