@@ -5,9 +5,9 @@ export const publications_list = {
         'authors': 'Z. Dong, T. Barrett, A. Patil, Y. Shoda, L. Battle, E. Wall',
         'doi': 'https://doi.org/10.1145/3708359.3712140',
         'paper': 'https://ameyabp.github.io/projects/bcds/A_Design_Space_of_Behavior_Change_Interventions_for_Responsible_Data_Science.pdf',
-        'video': null,
+        'video': 'projects/bcds/design_space.mp4',
         'presentation': null,
-        'data': null,
+        'data': 'projects/bcds/design_space/index.html',
         'news': null,
         'bibtex': '\n\
             @inproceedings{10.1145/3708359.3712140,\n\
@@ -32,21 +32,30 @@ export const publications_list = {
         'title': "Behavior Matters: An Alternative Perspective on Promoting Responsible Data Science",
         'venue': "ACM Conference on Computer-Supported Cooperative Work and Social Computing, 2025",
         'authors': 'Z. Dong, A. Patil, Y. Shoda, L. Battle, E. Wall',
-        'doi': null,
+        'doi': 'https://dl.acm.org/doi/10.1145/3710932',
         'paper': 'https://arxiv.org/pdf/2410.17273',
         'video': null,
         'presentation': null,
         'data': null,
         'news': null,
         'bibtex': '\n\
-            @misc{dong_behavior_2024,\n\
-            title={Behavior Matters: An Alternative Perspective on Promoting Responsible Data Science},\n\
-            author={Ziwei Dong and Ameya Patil and Yuichi Shoda and Leilani Battle and Emily Wall},\n\
-            year={2024},\n\
-            eprint={2410.17273},\n\
-            archivePrefix={arXiv},\n\
-            primaryClass={cs.CY},\n\
-            url={https://arxiv.org/abs/2410.17273},\n\
+            @article{10.1145/3710932,\n\
+            author = {Dong, Ziwei and Patil, Ameya and Shoda, Yuichi and Battle, Leilani and Wall, Emily},\n\
+            title = {Behavior Matters: An Alternative Perspective on Promoting Responsible Data Science},\n\
+            year = {2025},\n\
+            issue_date = {May 2025},\n\
+            publisher = {Association for Computing Machinery},\n\
+            address = {New York, NY, USA},\n\
+            volume = {9},\n\
+            number = {2},\n\
+            url = {https://doi.org/10.1145/3710932},\n\
+            doi = {10.1145/3710932},\n\
+            abstract = {Data science pipelines inform and influence many daily decisions, from what we buy to who we work for and even where we live. When designed incorrectly, these pipelines can easily propagate social inequity and harm. Traditional solutions are technical in nature; e.g., mitigating biased algorithms. In this vision paper, we introduce a novel lens for promoting responsible data science using theories of behavior change that emphasize not only technical solutions but also the behavioral responsibility of practitioners. By integrating behavior change theories from cognitive psychology with data science workflow knowledge and ethics guidelines, we present a new perspective on responsible data science. We present example data science interventions in machine learning and visual data analysis, contextualized in behavior change theories that could be implemented to interrupt and redirect potentially suboptimal or negligent practices while reinforcing ethically conscious behaviors. We conclude with a call to action to our community to explore this new research area of behavior change interventions for responsible data science.},\n\
+            journal = {Proc. ACM Hum.-Comput. Interact.},\n\
+            month = may,\n\
+            articleno = {CSCW034},\n\
+            numpages = {23},\n\
+            keywords = {AI ethics, behavior change, human-in-the-loop machine learning, persuasive technologies, responsible data science}\n\
         }'
     },
     'hydroVis': {

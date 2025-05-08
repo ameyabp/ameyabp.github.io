@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operationalize the Design Space of Behavior Change Interventions for Responsible Data Science
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .accordion {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: slategray;
+            border: 1px solid #bce8f1;
+            border-radius: 4px;
+            color: white;
+        }
+        .accordion.level-2 {
+            background-color: darkslategray;
+            border-color: #428bca;
+        }
+        .accordion.level-3 {
+            background-color: darkslategray;
+            border-color: #428bca;
+        }
+        .accordion.disabled {
+            cursor: default;
+            background-color: #e0e0e0;
+            color: #aaa;
+        }
+        a{
+          color: #fff;
+          text-decoration: none;
+        }
+        .panel {
+            padding: 0 10px;
+            display: none;
+            background-color: white;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0 0 4px 4px;
+        }
+        .panel.show {
+            display: block;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+        li {
+            list-style: none;
+            margin: 15px 0;
+        }
+        li label {
+            cursor: pointer;
+        }
+
+        .header {
+            background-color: #f8f9fa;
+            width: 98%;
+            padding: 0 1%;
+            display: flex;
+            background: #222;
+            border-color: #080808;
+            height: 50px;
+            line-height: 50px;
+            color: #FFF;
+        }
+
+        .header .item {
+            margin-right: 4%;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .header .item.title {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        h3{
+            color: #333;
+            font-size: 24px;
+        }
+        .more{
+          width: 100%;
+          margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="home">
+        <div class="home-container">
+            <div class="header">
+              <a href="index.html" class="item title">BCDS Design Space Guide</a>
+                <a href="usage.html" class="item">Usage Scenario</a>
+            </div>
+            <div class="content">
+                <div class="content-container">
+                    <div class="top">
+                        <h3>BCDS Design Space Guide</h3>
+                        <div class="more">
+                          <h4>Examplary Usage Scenario Context:</h4>
+                          <p>A professor is teaching a course called "Intro to Data Science" He has already taught the basic concepts of DS and now he want to let students to work on a course project where they need to deploy a DS model to predict loan approval for multi-ethnic applicants based on previous 10 years data from Deutsche Bank. The professor wants to build a DS tool that helps to intervene students in the environment of Jupyter Notebook to ensure students can practise responsible data science and care about fairness of all ethnic groups.</p>
+                        </div>
+                        <div class="title">Click on a domain to see constructs of this examplary scenario.</div>
+                    </div>
+
+                    <div class="body">
+                        <div id="accordion-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+const data = [
+  {
+    id: 1,
+    name: "Why",
+    desc: "",
+    children: [
+      {
+        id: 7,
+        name: "Purpose",
+        desc: "",
+        children: [
+          {
+            id: 8,
+            name: "Technical Convenience: The tool can provide some assistence in technical convenience but should not be a focus of this tool",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 9,
+            name: "Responsible Consideration: In order to improve ethnic equality in loan approval task. Increase students' awareness of responsible data science",
+            desc: "",
+            children: [],
+          },
+        ],
+      },
+      {
+        id: 10,
+        name: "Outcomes",
+        desc: "",
+        children: [
+          {
+            id: 11,
+            name: "Positive Behavior Promotes Outcome: The intervention should encourage or congrats the students when they finish all the necessary steps in all DS phases if the code students wrote include all necessary steps that are pre-defined by the intervention",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 12,
+            name: "Negative Behavior Hampers Outcome: The intervention should warn or remind the students if it detects and consider an action to be potential problematic (e.g., model's fairness or general performance does not meet the project requirement).",
+            desc: "",
+            children: [],
+          },
+        ],
+      },
+      {
+        id: 13,
+        name: "Regulations",
+        desc: "",
+        children: [
+          {
+            id: 14,
+            name: "Technical Standards: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 15,
+            name: "Legal Standards: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 16,
+            name: "Ethical Standards: Yes, in order to improve ethnic equality in loan approval task.",
+            desc: "",
+            children: [],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Who",
+    desc: "",
+    children: [
+      {
+        id: 17,
+        name: "Personal Factors",
+        desc: "",
+        children: [
+          {
+            id: 18,
+            name: "Professional Profile",
+            desc: "",
+            children: [
+              {
+                id: 19,
+                name: "Scientists/Academics: N/A",
+                desc: "",
+                children: [],
+              },
+              {
+                id: 20,
+                name: "Engineers/Analysts: N/A",
+                desc: "",
+                children: [],
+              },
+              {
+                id: 21,
+                name: "Educators: N/A",
+                desc: "",
+                children: [],
+              },
+              {
+                id: 22,
+                name: "Students: Yes",
+                desc: "",
+                children: [],
+              },
+            ],
+          },
+          {
+            id: 23,
+            name: "Professional Expertise",
+            desc: "",
+            children: [
+              {
+                id: 24,
+                name: "Data Science Expertise: Entry-level",
+                desc: "",
+                children: [],
+              },
+              {
+                id: 25,
+                name: "Domain Knowledge: No domain background knowledge",
+                desc: "",
+                children: [],
+              },
+            ],
+          },
+          {
+            id: 26,
+            name: "Personal Profile",
+            desc: "",
+            children: [
+              {
+                id: 27,
+                name: "Gender: All sex groups",
+                desc: "",
+                children: [],
+              },
+              {
+                id: 90,
+                name: "Ethnicity: All ethnicity groups",
+                desc: "",
+                children: [],
+              },
+              {
+                id: 28,
+                name: "Age Groups: 19-23 college students",
+                desc: "",
+                children: [],
+              },
+              {
+                id: 29,
+                name: "Personality Traits: All personality trait",
+                desc: "",
+                children: [],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 30,
+        name: "Systemic Factors",
+        desc: "",
+        children: [
+          {
+            id: 31,
+            name: "People",
+            desc: "",
+            children: [
+              {
+                id: 33,
+                name: "Individual and Data Privilege: No privilege",
+                desc: "",
+                children: [],
+              },
+              {
+                id: 34,
+                name: "Collaborative Factors: No Multidicpiline collaboration",
+                desc: "",
+                children: [],
+              },
+            ],
+          },
+          {
+            id: 32,
+            name: "Process",
+            desc: "",
+            children: [
+              {
+                id: 35,
+                name: "Process Orientation: The students will work on this project solely with the help of the intervention, they should not communicate with cohorts or the professor",
+                desc: "",
+                children: [],
+              },
+              {
+                id: 36,
+                name: "Project Clarity: Train a responsible DS model that comes with a decent accuracy, and cares about all ethnicity groups of the applicants",
+                desc: "",
+                children: [],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 39,
+    name: "What",
+    desc: "",
+    children: [
+      {
+        id: 40,
+        name: "What Behavioral Factors Are Being Addressed?",
+        desc: "",
+        children: [
+          {
+            id: 41,
+            name: "Capability: Intervention could point out mistakes they have made. In that sense, professor mainly need interventions to boost their capability. They are still learning and taking the class, so such a intervention could also increase their capability while students using it. One potential intervention the professor imagine is a coding copilot, which can (1). highlight and remind the coding errors, and (2). provide a chat bubble that high-levelly describes the module/function students wrote in the notebook when they hover the mouse on a written module or function.",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 42,
+            name: "Opportunity: Apart from capability, professor wants to increase students' awreness of the potential problems they may overlook, which is opportunity. A potential intervention could be a coding monitor that detects what DS phase the student is currently on, and remind them to check if they completed the necessary steps during the current phase.",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 43,
+            name: "Motivation: This project will showcase how different model configurations can make a difference on the influence the model prediction on different subgroups, It will further increase students' motivation on practising responsible data science in their future practices.",
+            desc: "",
+            children: [],
+          },
+        ],
+      },
+      {
+        id: 44,
+        name: "What Attitude Change Processes Have Been Addressed?",
+        desc: "",
+        children: [
+          {
+            id: 45,
+            name: "Compliance: Dr. Y wants students to learn the common skills for responsible data science",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 46,
+            name: "Identification: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 47,
+            name: "Internalization: Dr. Y ultimately wants the students to view responsible data science practices as an essential part of doing data science because they recognize the importance.",
+            desc: "",
+            children: [],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 48,
+    name: "When",
+    desc: "",
+    children: [
+      {
+        id: 49,
+        name: "Timing Based on Action Occurrence",
+        desc: "",
+        children: [
+          {
+            id: 52,
+            name: "Synchronous: The professor only wants to synchronously provide the coding detection and function/module explanation during the behavior. Too much help during the behavior does not align with professor's intention.",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 53,
+            name: "Asynchronous: N/A",
+            desc: "",
+            children: [],
+          },
+          // {
+          //   id: 54,
+          //   name: "After Behavior (Reflective):",
+          //   desc: "",
+          //   children: [],
+          // },
+        ],
+      },
+      {
+        id: 60,
+        name: "Timing Based on Phase in the Data Science Process",
+        desc: "",
+        children: [
+          {
+            id: 55,
+            name: "Preparation: One potential intervention during preparation phase could help students to understand what pre-processing options they have to finish this DS task and a short summary for each of them regarding what does this option do to the dataset. This could also assist Information acquisition in next branch as well",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 56,
+            name: "Analysis: Given the pre-processed dataset, students need to analysis the dataset and testify what features to keep or discard. A potential intervention here could help students to think about the relationship between features. Another place where analysis could happen is model selection. A potential intervention could help students to narrow down the model options by providing a set of models that are popular when solving this kind of problems. This could also assist Information analysis in next branch as well",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 57,
+            name: "Deployment: This is a course project that does not touches model deployment, thus we dont need to worry about it here.",
+            desc: "",
+          },
+          {
+            id: 58,
+            name: "Communication: After finishing the coding, students need to document the course project into a project report. Intervention could remind students to note down important milesones and data from this course project.",
+            desc: "",
+          },
+        ],
+      },
+      {
+        id: 59,
+        name: "Timing Based on Four Stages of Human Information Processing",
+        desc: "",
+        children: [
+          {
+            id: 61,
+            name: "Information Acquisition: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 62,
+            name: "Information Analysis: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 63,
+            name: "Decision and Action Selection: During the data preprocessing and model selection, interventions could inform students about (1). what are the potential options they have, (2). what are the promising options that are highly likely to work, or what are the wrong-for-sure options that we should discard.",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 64,
+            name: "Action Implementation: Professor wants students to practise the tools learnt from class, does not want to provide implementation assistance in this intervention tool",
+            desc: "",
+            children: [],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 70,
+    name: "Where",
+    desc: "",
+    children: [
+      {
+        id: 71,
+        name: "In-situ: In-situ is a major option, pm wants it to be mainly in-situ tools so that data scientists can focus on the project itself and is easier to manage",
+        desc: "",
+        children: [],
+      },
+      {
+        id: 72,
+        name: "Ex-situ: N/A",
+        desc: "",
+        children: [],
+      },
+    ],
+  },
+  {
+    id: 80,
+    name: "How",
+    desc: "",
+    children: [
+      {
+        id: 81,
+        name: "Intrusiveness",
+        desc: "",
+        children: [
+          {
+            id: 85,
+            name: "Hidden and Ignorable: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 86,
+            name: "Hidden and Not Ignorable: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 87,
+            name: "Visible and Ignorable: Professor wants the intervention to be accurate and does not have false alarm. When intervention is lunched, it should be reasonable and students should not ignore it",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 88,
+            name: "Visible and Not Ignorable: N/A",
+            desc: "",
+          },
+        ],
+      },
+      {
+        id: 82,
+        name: "Programming Requirement",
+        desc: "",
+        children: [
+          {
+            id: 89,
+            name: "Coding Needed: Yes",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 90,
+            name: "No Coding Needed: N/A",
+            desc: "",
+            children: [],
+          },
+        ],
+      },
+      {
+        id: 83,
+        name: "Interactivity",
+        desc: "",
+        children: [
+          {
+            id: 91,
+            name: "Interactive: Mostly likely no, the professor does not wants the intervention to include too many interactions. This intervention is mainly designed for education purpose and should only convey simple instructive or informatic messages. Students do not need to learn complex interfaces and interact with it. The only interactivity would be hovering on a module/function to show the module/function's functionality:",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 92,
+            name: "Static: Mainly static",
+            desc: "",
+            children: [],
+          },
+        ],
+      },
+      {
+        id: 84,
+        name: "Level of Automation",
+        desc: "",
+        children: [
+          {
+            id: 93,
+            name: "The computer offers no assistance: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 94,
+            name: "The computer offers a complete set of decision/action alternatives: One good option. This would help students to know what potential tools they could use in terms of different  DS phase",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 95,
+            name: "The computer narrows the selection down to a few: One good option. This would help students to get ride of the wrong options when they make decisions.",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 96,
+            name: "The computer suggests one alternative: One good option. This would help students to recall other models/actions they learnt from class",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 97,
+            name: "The computer executes that suggestion if the human approves: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 98,
+            name: "The computer allows the human a restricted time to veto before automatic execution: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 99,
+            name: "The computer executes automatically, then necessarily informs the human: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 100,
+            name: "The computer informs the human only if asked: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 101,
+            name: "The computer informs the human only if it, the computer, decides to: N/A",
+            desc: "",
+            children: [],
+          },
+          {
+            id: 102,
+            name: "The computer decides everything and acts autonomously, ignoring the human: N/A",
+            desc: "",
+            children: [],
+          },
+        ],
+      },
+    ],
+  },
+];
+
+function createAccordion(data, container, level = 1) {
+    data.forEach(item => {
+        if (item.children && item.children.length > 0) {
+            const accordion = document.createElement('div');
+            accordion.className = `accordion level-${level}`;
+            accordion.innerText = item.name;
+
+            const panel = document.createElement('div');
+            panel.className = 'panel';
+
+            createAccordion(item.children, panel, level + 1);
+
+            accordion.addEventListener('click', () => {
+                panel.classList.toggle('show');
+            });
+
+            container.appendChild(accordion);
+            container.appendChild(panel);
+        } else {
+            const ul = document.createElement('ul');
+            const li = document.createElement('li');
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+
+            const label = document.createElement('label');
+            label.innerText = item.name;
+
+            li.appendChild(checkbox);
+            li.appendChild(label);
+            ul.appendChild(li);
+            container.appendChild(ul);
+        }
+    });
+}
+const container = document.getElementById('accordion-container');
+createAccordion(data, container);
+</script>
+</html>

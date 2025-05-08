@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operationalize the Design Space of Behavior Change Interventions for Responsible Data Science</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            /* border: 1px solid black; */
+            border-style: solid;
+            border-color: #000000;
+            text-align: left;
+            border-width: 0;
+
+        }
+        tbody tr:nth-child(even) {
+            background-color: #ccc; 
+        }
+
+        tbody tr:last-child{
+            background-color: #c9daf8;
+        }
+
+        tbody a{
+            text-decoration: none;
+            color:#000;
+        }
+        .border-top{
+            border-width: 1x 0 0 0;
+        }
+        .border-right{
+            border-width: 0 1px 0 0;
+        }
+        .border-bottom{
+            border-width: 0 0 1px 0;
+        }
+        .border-bottom-right{
+            border-width: 0 1px 1px 0;
+        }
+        .border-left{
+            border-width: 0 0 0 1px;
+        }
+        .blue{
+            color: #0e6df2;
+        }
+
+        .black{
+            color: #000000;
+        }
+
+        .large{
+            font-size: 1.5rem;
+        }
+
+        .bold{
+            font-weight: bold;
+        }
+
+        .bottom{
+            vertical-align: bottom;
+        }
+
+        .text-small{
+            font-size: 0.7rem;
+        }
+
+        .vertical-text{
+            writing-mode: vertical-rl; 
+            text-orientation: sideways; 
+            transform: rotate(180deg);  
+        }
+
+        .text-middle{
+            vertical-align: middle;
+            text-align: center;
+        }
+        .text-mid{
+            text-align: center;
+        }
+        .box {
+            margin: 0 auto;
+            width:20px;               
+            height:20px;            
+            background-color:#0e6df2;    
+            display: flex;             
+            justify-content: center;    
+            align-items: center;       
+            border-radius: 2px;       
+        }
+
+        .checkmark {
+            font-size:15px;           
+            color: white;              
+        }
+
+        .InterventionName,
+        .Asynchronous,
+        .Communication,
+        .ActionImplementation,
+        .Ex-Situ,
+        .VisibleNotIgnorable,
+        .LevelofAutomation,
+        .Year{
+            border-style: solid;
+            border-color: #000000;
+            border-width: 0 1px 0 0; 
+            text-align: center;
+        }
+
+        .InterventionName a{
+            color: #0e6df2;
+            text-decoration: none;
+        }
+
+        .Year a{
+            cursor: default;
+        }
+
+        .header {
+            background-color: #f8f9fa;
+            width: 98%;
+            padding: 0 1%;
+            display: flex;
+            background: #222;
+            border-color: #080808;
+            height: 50px;
+            line-height: 50px;
+            color: #FFF;
+        }
+
+        .header .item {
+            margin-right: 4%;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #FFF;
+            text-decoration: none;
+        }
+        .header .item.title {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        h3{
+            color: #333;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="home">
+        <div class="home-container" id="content-to-download">
+            <div class="header">
+                <a href="index.html" class="item title">BCDS Design Space Guide</a>
+                <a href="usage.html" class="item">Usage Scenario</a>
+                <a href="coding.html" class="item">Coding Results</a>
+            </div>
+            <div class="content">
+                <div class="content-container">
+                    <div class="body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td class="bottom border-bottom text-mid" rowspan="3">Year</td>
+                                    <td class="bottom border-bottom-right text-mid" rowspan="3">Intervention Name</td>
+                                    <td class="blue large bold border-bottom-right text-middle" colspan="10">When</td>
+                                    <td class="blue large bold border-bottom-right text-middle" colspan="2">Where</td>
+                                    <td class="blue large bold border-bottom-right text-middle" colspan="9">How</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="blue text-middle border-bottom-right" colspan="2">Action Occurence</td>
+                                    <td class="blue text-middle border-bottom-right" colspan="4">Data Science Process</td>
+                                    <td class="blue text-middle border-bottom-right" colspan="4">Stages of Human Information Processing</td>
+                                    <td class="vertical-text border-bottom-right text-middle text-small bold" rowspan="2">In-Situ</td>
+                                    <td class="vertical-text border-bottom-right text-middle text-small bold" rowspan="2">Ex-Situ</td>
+                                    <td class="blue text-middle border-bottom-right" colspan="4">Intrusiveness</td>
+                                    <td class="blue text-middle border-bottom-right" colspan="2">Programing Requirement</td>
+                                    <td class="border-bottom-right vertical-text text-middle text-small bold text-middle" rowspan="2">Level of Automation</td>
+                                    <td class="blue text-middle border-bottom-right" colspan="2">Interactivity</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Synchronous</td>
+                                    <td class="vertical-text text-middle text-small border-bottom-right bold">Asynchronous</td>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Preparation</td>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Analysis</td>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Deployment</td>
+                                    <td class="vertical-text text-middle text-small border-bottom-right bold">Communication</td>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Information Acquisition</td>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Information Analysis</td>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Decision and Action Selection</td>
+                                    <td class="vertical-text text-middle text-small border-bottom-right bold">Action Implementation</td>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Hidden and Ignorable</td>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Hidden and Not Ignorable</td>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Visible and Ignorable</td>
+                                    <td class="vertical-text text-middle text-small border-bottom-right bold">Visible and Not Ignorable</td>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Coding Needed</td>
+                                    <td class="vertical-text text-middle text-small border-bottom-right bold">Coding not Needed</td>
+                                    <td class="vertical-text text-middle text-small border-bottom bold">Interactive GUI</td>
+                                    <td class="vertical-text text-middle text-small border-bottom-right bold">Static Information</td>
+                                </tr>
+                            </thead>
+                            <tbody id="body">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+const data = [
+    {
+        "url":"https://github.com/dssg/aequitas",
+		"Year":2019,
+		"InterventionName":"Aequitas",
+        "Synchronous":false,
+        "Asynchronous":true,
+        "Preparation":true,
+        "Analysis":true,
+        "Deployment":true,
+        "Communication":false,
+        "InformationAcquisition":false,
+        "InformationAnalysis":false,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false,
+        "In-Situ":true,
+        "Ex-Situ":true,
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false,
+        "CodingNeeded":true,
+        "CodingnotNeeded":false,
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/facebookresearch/vizseq",
+		"Year":2019,
+		"InterventionName":"VizSeq",
+        "Synchronous":false,
+        "Asynchronous":true,
+        "Preparation":false,
+        "Analysis":false,
+        "Deployment":true,
+        "Communication":false,
+        "InformationAcquisition":false,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":false,
+        "ActionImplementation":false,
+        "In-Situ":true,
+        "Ex-Situ":true,
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false,
+        "CodingNeeded":true,
+        "CodingnotNeeded":false,
+        "LevelofAutomation":1,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/interpretml/interpret",
+		"Year":2019,
+		"InterventionName":"InterpretML",
+        "Synchronous":true,
+        "Asynchronous":true,
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":true,
+        "Communication":false,
+        "InformationAcquisition":true,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":false,
+        "ActionImplementation":false,
+        "In-Situ":true,
+        "Ex-Situ":false,
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false,
+        "CodingNeeded":true,
+        "CodingnotNeeded":false,
+        "LevelofAutomation":1,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/interpretml/interpret-community",
+		"Year":2019,
+		"InterventionName":"Interpret-Community",
+        "Synchronous":true,
+        "Asynchronous":false,
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":true,
+        "Communication":false,
+        "InformationAcquisition":false,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":false,
+        "ActionImplementation":false,
+        "In-Situ":true,
+        "Ex-Situ":false,
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false,
+        "CodingNeeded":true,
+        "CodingnotNeeded":false,
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/PAIR-code/what-if-tool",
+		"Year":2019,
+		"InterventionName":"What-if Tool",
+        "Synchronous":false,
+        "Asynchronous":true,
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":false,
+        "Communication":false,
+        "InformationAcquisition":false,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false,
+        "In-Situ":true,
+        "Ex-Situ":false,
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false,
+        "CodingNeeded":false,
+        "CodingnotNeeded":true,
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/koaning/whatlies",
+		"Year":2020,
+		"InterventionName":"Whatlies",
+        "Synchronous":false,
+        "Asynchronous":true,  //Action Occurence
+        "Preparation":true,
+        "Analysis":true,
+        "Deployment":false,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":true,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":false, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":true,
+        "CodingnotNeeded":false, //Programing Requirement
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/microsoft/responsible-ai-toolbox",
+		"Year":2020,
+		"InterventionName":"RAI Widgets",
+        "Synchronous":true,
+        "Asynchronous":false,  //Action Occurence
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":true,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":false,
+        "InformationAnalysis":false,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":false, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":true,
+        "CodingnotNeeded":false, //Programing Requirement
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/poloclub/timbertrek",
+		"Year":2022,
+		"InterventionName":"TimberTrek",
+        "Synchronous":false,
+        "Asynchronous":true,  //Action Occurence
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":false,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":true,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":true, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":false,
+        "CodingnotNeeded":true, //Programing Requirement
+        "LevelofAutomation":1,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/interpretml/gam-changer",
+		"Year":2022,
+		"InterventionName":"GAM Changer",
+        "Synchronous":false,
+        "Asynchronous":true,  //Action Occurence
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":true,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":false,
+        "InformationAnalysis":false,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":true, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":false,
+        "CodingnotNeeded":true, //Programing Requirement
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/evidentlyai/evidently",
+		"Year":2022,
+		"InterventionName":"Evidently",
+        "Synchronous":false,
+        "Asynchronous":true,  //Action Occurence
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":true,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":false,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":false,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":true, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":true,
+        "CodingnotNeeded":false, //Programing Requirement
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/poloclub/visual-auditor",
+		"Year":2022,
+		"InterventionName":"Visual Auditor",
+        "Synchronous":false,
+        "Asynchronous":true,  //Action Occurence
+        "Preparation":false,
+        "Analysis":false,
+        "Deployment":true,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":true,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":false,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":true, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":false,
+        "CodingnotNeeded":true, //Programing Requirement
+        "LevelofAutomation":2,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/causalvis/causalvis",
+		"Year":2023,
+		"InterventionName":"CausalVis",
+        "Synchronous":true,
+        "Asynchronous":false,  //Action Occurence
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":false,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":false,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":false, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":true,
+        "CodingnotNeeded":false, //Programing Requirement
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://ieeexplore.ieee.org/abstract/document/9904444?casa_token=OC_9nVrCO-gAAAAA:czP34_qgxQqP2rWqUzGSGUZ7WbW9BDVhwQ31wggwd7lvqfx3gGrvT6z-wtGfkTjBH23Q2_iOOw",
+		"Year":2023,
+		"InterventionName":"Calibrate",
+        "Synchronous":false,
+        "Asynchronous":true,  //Action Occurence
+        "Preparation":false,
+        "Analysis":false,
+        "Deployment":true,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":false,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":false,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":false, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":true,
+        "CodingnotNeeded":false, //Programing Requirement
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://arxiv.org/pdf/2204.06425.pdf",
+		"Year":2023,
+		"InterventionName":"DocML",
+        "Synchronous":true,
+        "Asynchronous":false,  //Action Occurence
+        "Preparation":true,
+        "Analysis":true,
+        "Deployment":true,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":false,
+        "InformationAnalysis":false,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":false, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":true, //Intrusiveness
+        "CodingNeeded":false,
+        "CodingnotNeeded":true, //Programing Requirement
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://dl.acm.org/doi/abs/10.1145/3545995?casa_token=xZ3rdEMx9FAAAAAA:0i0ZuQX7M_gUMzBlOyh84uEsNdSP-ZEtk2yzuSObWb2Js9UQSXt5j9Doc0dmSKPD8RDjMmGaR2CHhg",
+		"Year":2023,
+		"InterventionName":"EDAssistant",
+        "Synchronous":true,
+        "Asynchronous":false,  //Action Occurence
+        "Preparation":true,
+        "Analysis":false,
+        "Deployment":false,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":true,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":false, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":true,
+        "CodingnotNeeded":false, //Programing Requirement
+        "LevelofAutomation":2,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://github.com/StanfordHCI/ModelSketchBook",
+		"Year":2023,
+		"InterventionName":"ModelSketchBook",
+        "Synchronous":false,
+        "Asynchronous":true,  //Action Occurence
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":false,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":false,
+        "InformationAnalysis":false,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":false, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":true,
+        "CodingnotNeeded":false, //Programing Requirement
+        "LevelofAutomation":1,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://arxiv.org/abs/2303.04059",
+		"Year":2023,
+		"InterventionName":"Notable",
+        "Synchronous":false,
+        "Asynchronous":true,  //Action Occurence
+        "Preparation":false,
+        "Analysis":false,
+        "Deployment":false,
+        "Communication":true, //Data Science Process
+        "InformationAcquisition":false,
+        "InformationAnalysis":false,
+        "DecisionActionSelection":true,
+        "ActionImplementation":true, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":false, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":true,
+        "CodingnotNeeded":false, //Programing Requirement
+        "LevelofAutomation":1,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://chensivan.github.io/papers/chi2023_vizprog.pdf",
+		"Year":2023,
+		"InterventionName":"VizProg",
+        "Synchronous":true,
+        "Asynchronous":false,  //Action Occurence
+        "Preparation":true,
+        "Analysis":false,
+        "Deployment":false,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":true,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":false,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":false,
+        "Ex-Situ":true, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":false,
+        "CodingnotNeeded":true, //Programing Requirement
+        "LevelofAutomation":1,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://www.ibm.com/products/watsonx-governance?utm_content=SRCWW&p1=Search&p4=43700078324160321&p5=b&p9=58700008581103010&gclid=CjwKCAjw_ZC2BhAQEiwAXSgClpJ-F5kwhsgobp0nGwe5lLVa34eryt01gxCAKU10jOa63MTG7BdXFBoC6sYQAvD_BwE&gclsrc=aw.ds",
+		"Year":2023,
+		"InterventionName":"watsonx.governance",
+        "Synchronous":true,
+        "Asynchronous":false,  //Action Occurence
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":true,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":true,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":false,
+        "Ex-Situ":true, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":true, //Intrusiveness
+        "CodingNeeded":false,
+        "CodingnotNeeded":true, //Programing Requirement
+        "LevelofAutomation":1,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://www.microsoft.com/en-us/haxtoolkit/",
+		"Year":2024,
+		"InterventionName":"HAX Toolkit",
+        "Synchronous":true,
+        "Asynchronous":false,  //Action Occurence
+        "Preparation":true,
+        "Analysis":true,
+        "Deployment":false,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":false,
+        "InformationAnalysis":false,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":false,
+        "Ex-Situ":true, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":false,
+        "CodingnotNeeded":true, //Programing Requirement
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://zijie.wang/papers/farsight/",
+		"Year":2024,
+		"InterventionName":"Farsight",
+        "Synchronous":true,
+        "Asynchronous":false,  //Action Occurence
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":false,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":true,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":false, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":false,
+        "CodingnotNeeded":true, //Programing Requirement
+        "LevelofAutomation":1,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://arxiv.org/pdf/2401.14447",
+		"Year":2024,
+		"InterventionName":"Wordflow",
+        "Synchronous":true,
+        "Asynchronous":false,  //Action Occurence
+        "Preparation":false,
+        "Analysis":true,
+        "Deployment":true,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":true,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":false,
+        "Ex-Situ":true, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":false,
+        "CodingnotNeeded":true, //Programing Requirement
+        "LevelofAutomation":0,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    },{
+        "url":"https://dl.acm.org/doi/pdf/10.1145/3613904.3642755",
+		"Year":2024,
+		"InterventionName":"Retrograde",
+        "Synchronous":true,
+        "Asynchronous":false,  //Action Occurence
+        "Preparation":true,
+        "Analysis":true,
+        "Deployment":false,
+        "Communication":false, //Data Science Process
+        "InformationAcquisition":true,
+        "InformationAnalysis":true,
+        "DecisionActionSelection":true,
+        "ActionImplementation":false, //Stages of Human Information Processing
+        "In-Situ":true,
+        "Ex-Situ":false, //Where
+        "HiddenIgnorable":false,
+        "HiddenNotIgnorable":false,
+        "VisibleIgnorable":true,
+        "VisibleNotIgnorable":false, //Intrusiveness
+        "CodingNeeded":false,
+        "CodingnotNeeded":true, //Programing Requirement
+        "LevelofAutomation":2,
+        "InteractiveGUI":true,
+        "StaticInformation":false
+    }
+];
+const body = document.getElementById("body");
+let html = "";
+
+data.forEach(item => {
+    html += "<tr>";
+    for (const key in item) {
+        if (item.hasOwnProperty(key)) {
+            if (item[key] === false) {
+                html += `<td class="${key}">&nbsp;</td>`;
+            } else if (item[key] === true) {
+                html += `<td class="${key}"><div class="box"><span class="checkmark">✔</span></div></td>`;
+            } else {
+                if (key === "Year" ) {
+                    html += `<td class="Year"><a href="${item.url}">${item["Year"]}</a></td>`;
+                }else if(key === "InterventionName"){
+                    html += `<td class="InterventionName"><a href="${item.url}">${item["InterventionName"]}</a></td>`;
+                }
+                else if(key != "url") {
+                    html += `<td class="${key}">${item[key]}</td>`;
+                }
+            }
+        }
+    }
+    html += "</tr>";
+});
+
+
+html += "<tr>";
+html += "   <td class='text-middle' colspan='2'>Percentile</td>";
+html += "   <td class='text-middle'>52%</td>";
+html += "   <td class='text-middle'>52%</td>";
+html += "   <td class='text-middle'>30%</td>";
+html += "   <td class='text-middle'>74%</td>";
+html += "   <td class='text-middle'>52%</td>";
+html += "   <td class='text-middle'>4%</td>";
+html += "   <td class='text-middle'>43%</td>";
+html += "   <td class='text-middle'>70%</td>";
+html += "   <td class='text-middle'>70%</td>";
+html += "   <td class='text-middle'>4%</td>";
+html += "   <td class='text-middle'>83%</td>";
+html += "   <td class='text-middle'>43%</td>";
+html += "   <td class='text-middle'>0%</td>";
+html += "   <td class='text-middle'>0%</td>";
+html += "   <td class='text-middle'>100%</td>";
+html += "   <td class='text-middle'>9%</td>";
+html += "   <td class='text-middle'>52%</td>";
+html += "   <td class='text-middle'>48%</td>";
+html += "   <td class='text-middle'>12:8:3:0</td>";
+html += "   <td class='text-middle'>100%</td>";
+html += "   <td class='text-middle'>0%</td>";
+html +="</tr>";
+
+body.innerHTML = html;
+
+</script>
+</html>
