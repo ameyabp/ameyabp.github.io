@@ -7,7 +7,7 @@ export const publications_list = {
         'paper': 'https://ameyabp.github.io/projects/bcds/A_Design_Space_of_Behavior_Change_Interventions_for_Responsible_Data_Science.pdf',
         'video': 'projects/bcds/design_space.mp4',
         'presentation': null,
-        'data': 'projects/bcds/design_space/index.html',
+        'data': 'projects/bcds/design_space/IUI_Design_Space_Prototype/index.html',
         'news': null,
         'bibtex': '\n\
             @inproceedings{10.1145/3708359.3712140,\n\
