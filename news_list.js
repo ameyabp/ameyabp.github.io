@@ -1,7 +1,7 @@
 export const news_list = [
     {
-        'timestamp': 'April 2025',
-        'event': 'Started research internship at the National Renewable Energy Laboratory (NREL), Golden, Colorado USA'
+        'timestamp': 'April 2025 to September 2025',
+        'event': 'Research intern at the National Renewable Energy Laboratory (NREL), Golden, Colorado USA'
     },
     {
         'timestamp': 'March 2025',
