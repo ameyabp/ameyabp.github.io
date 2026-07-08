@@ -10,7 +10,7 @@ export const publications_list = {
         'data': 'projects/bcds/design_space/IUI_Design_Space_Prototype/index.html',
         'news': null,
         'bibtex': '\n\
-            @inproceedings{10.1145/3708359.3712140,\n\
+            @inproceedings{dong_design_2025,\n\
             author = {Dong, Ziwei and Barrett, Teanna and Patil, Ameya B and Shoda, Yuichi and Battle, Leilani and Wall, Emily},\n\
             title = {A Design Space of Behavior Change Interventions for Responsible Data Science},\n\
             year = {2025},\n\
@@ -39,7 +39,7 @@ export const publications_list = {
         'data': null,
         'news': null,
         'bibtex': '\n\
-            @article{10.1145/3710932,\n\
+            @article{dong_behavior_2025,\n\
             author = {Dong, Ziwei and Patil, Ameya and Shoda, Yuichi and Battle, Leilani and Wall, Emily},\n\
             title = {Behavior Matters: An Alternative Perspective on Promoting Responsible Data Science},\n\
             year = {2025},\n\
@@ -93,7 +93,7 @@ export const publications_list = {
         'data': null,
         'news': 'https://www.washington.edu/news/2023/11/15/whalevis-turns-more-than-a-century-of-whaling-data-into-an-interactive-map/',
         'bibtex': '\n\
-        @inproceedings{patil_whalevis_2023,\n\
+        @inproceedings{patil_whalevis-vis_2023,\n\
             address = {Melbourne, Australia},\n\
             title = {{WhaleVis}: {Visualizing} the {History} of {Commercial} {Whaling}},\n\
             isbn = {9798350325577},\n\
@@ -120,7 +120,7 @@ export const publications_list = {
         'data': null,
         'news': 'https://www.washington.edu/news/2023/11/15/whalevis-turns-more-than-a-century-of-whaling-data-into-an-interactive-map/',
         'bibtex': '\n\
-        @article{patil2023whalevis,\n\
+        @article{patil_whalevis-iwc_2023,\n\
             title={WhaleVis: A new visualization tool for the IWC catch database.},\n\
             author={Patil, Ameya and Rand, Zoe and Branch, Trevor and Battle, Leilani},\n\
             journal={Scientific Committee of the International Whaling Commission},\n\
@@ -139,7 +139,7 @@ export const publications_list = {
         'data': 'https://osf.io/tn2ph/?view_only=5a25891ca4a8431085488a8f3e38affc',
         'news': null,
         'bibtex': '\n\
-        @ARTICLE{patil2023studying,\n\
+        @ARTICLE{patil_studying_2023,\n\
             author={Patil, Ameya and Richer, Gaëlle and Jermaine, Christopher and Moritz, Dominik and Fekete, Jean-Daniel},\n\
             journal={IEEE Transactions on Visualization and Computer Graphics}, \n\
             title={Studying Early Decision Making with Progressive Bar Charts}, \n\
@@ -161,7 +161,7 @@ export const publications_list = {
         'data': null,
         'news': null,
         'bibtex': '\n\
-        @article{aguinaldo2019compressing,\n\
+        @article{aguinaldo_compressing_2019,\n\
             author       = {Angeline Aguinaldo and Ping{-}Yeh Chiang and Alexander Gain and Ameya Patil and Kolten Pearson and Soheil Feizi},\n\
             title        = {Compressing GANs using Knowledge Distillation},\n\
             journal      = {CoRR},\n\
