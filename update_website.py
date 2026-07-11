@@ -18,10 +18,15 @@ if __name__ == '__main__':
     format = "%A, %d %B %Y %H:%M:%S %Z"
     timestamp = datetime.now(timezone('Asia/Kolkata')).strftime(format)
     
-    f = open('index.html', 'r+')
-    lines = f.readlines()
-    lines[-6] = f"\t\t\t\tCreated using bootstrap. Last updated {timestamp}\n"
-    f.close()
+    lines = []
+    with open('index.html', 'r+') as f:
+        lines = f.readlines()
+        for i,line in enumerate(lines):
+            if "Created using bootstrap. Last updated" in line:
+                line = f"\t\t\t\tCreated using bootstrap. Last updated {timestamp}\n"
+                break
+
+        lines[i] = line
     os.remove('index.html')
 
     g = open('index.html', 'w')
