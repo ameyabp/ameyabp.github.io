@@ -1,5 +1,9 @@
 export const news_list = [
     {
+        'timestamp': 'July 2026',
+        'event': 'Defended my PhD thesis!'
+    },
+    {
         'timestamp': 'April 2025 to September 2025',
         'event': 'Research intern at the National Renewable Energy Laboratory (NREL), Golden, Colorado USA'
     },
