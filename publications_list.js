@@ -1,4 +1,25 @@
 export const publications_list = {
+    'inva_benchmark': {
+        'title': 'Task-Centered Benchmark for Interactive Network Visualization & Analysis',
+        'venue': 'CoRR, vol. abs/2607.03725, 2026.',
+        'authors': 'A. Patil, W. Tan, I. Sinha, L. Battle',
+        'doi': 'https://arxiv.org/abs/2607.03725',
+        'paper': 'https://arxiv.org/pdf/2607.03725.pdf',
+        'video': null,
+        'presentation': null,
+        'data': 'https://osf.io/3z4hk/overview?view_only=21e3de8aea404b1186c4d02938c24996',
+        'news': null,    
+        'bibtex': '{\n\
+            @misc{patil2026taskcenteredbenchmarkinteractivenetwork,\n\
+            title={Task-Centered Benchmark for Interactive Network Visualization & Analysis},\n\
+            author={Ameya Patil and Wei Jun Tan and Ishan Sinha and Leilani Battle},\n\
+            year={2026},\n\
+            eprint={2607.03725},\n\
+            archivePrefix={arXiv},\n\
+            primaryClass={cs.DB},\n\
+            url={https://arxiv.org/abs/2607.03725},\n\
+        }'
+    },
     'bcds_design_space': {
         'title': 'A Design Space of Behavior Change Interventions for Responsible Data Science',
         'venue': 'Proceedings of the Conference on Intelligent User Interface (IUI), 2025',
